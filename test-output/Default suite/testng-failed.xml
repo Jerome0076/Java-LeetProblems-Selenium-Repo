@@ -3,34 +3,6 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="salesforce.test.automation.S64VerifySorting">
-        <methods>
-          <include name="verifySorted"/>
-          <include name="TearDownStep"/>
-          <include name="initializeBrowserAndLogin"/>
-        </methods>
-      </class> <!-- salesforce.test.automation.S64VerifySorting -->
-      <class name="salesforce.test.automation.S640CertificationSortOrder">
-        <methods>
-          <include name="TearDownStep"/>
-          <include name="initializeBrowserAndLogin"/>
-          <include name="certificationsSortOrder"/>
-        </methods>
-      </class> <!-- salesforce.test.automation.S640CertificationSortOrder -->
-      <class name="salesforce.test.automation.S616DeleteOpportunity">
-        <methods>
-          <include name="TearDownStep"/>
-          <include name="deleteOpurtunity"/>
-          <include name="initializeBrowserAndLogin"/>
-        </methods>
-      </class> <!-- salesforce.test.automation.S616DeleteOpportunity -->
-      <class name="salesforce.test.automation.S629EditDashboard">
-        <methods>
-          <include name="editDashboard"/>
-          <include name="TearDownStep"/>
-          <include name="initializeBrowserAndLogin"/>
-        </methods>
-      </class> <!-- salesforce.test.automation.S629EditDashboard -->
       <class name="salesforce.test.automation.S623CreateLegalEntity">
         <methods>
           <include name="createLegalEntity"/>
@@ -38,20 +10,6 @@
           <include name="initializeBrowserAndLogin"/>
         </methods>
       </class> <!-- salesforce.test.automation.S623CreateLegalEntity -->
-      <class name="salesforce.test.automation.S610CreateCase">
-        <methods>
-          <include name="verifyCreateCase"/>
-          <include name="TearDownStep"/>
-          <include name="initializeBrowserAndLogin"/>
-        </methods>
-      </class> <!-- salesforce.test.automation.S610CreateCase -->
-      <class name="salesforce.test.automation.S653CreateLeadforCampaign">
-        <methods>
-          <include name="createLeadforCanpaign"/>
-          <include name="TearDownStep"/>
-          <include name="initializeBrowserAndLogin"/>
-        </methods>
-      </class> <!-- salesforce.test.automation.S653CreateLeadforCampaign -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

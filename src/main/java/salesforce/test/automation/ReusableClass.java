@@ -1,12 +1,17 @@
 package salesforce.test.automation;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
@@ -14,19 +19,27 @@ import org.testng.annotations.BeforeSuite;
 
 public class ReusableClass {
 	
-	static ChromeDriver driver;
+//	static ChromeDriver driver;
 	static WebDriverWait wait;
 	static Actions action;
+	RemoteWebDriver driver;
 	
 	@BeforeSuite
-    public void initializeBrowserAndLogin()
+    public void initializeBrowserAndLogin() throws MalformedURLException
     {
+		DesiredCapabilities dc = new DesiredCapabilities();
+		dc.setBrowserName("MicrosoftEdge");
+		dc.setPlatform(Platform.LINUX);
+		driver = new RemoteWebDriver(new URL("http://20.40.48.160:4444/wd/hub"), dc);
+		//ChromeDriver driver = new ChromeDriver();
+		driver.get(" https://login.salesforce.com/");
+
     	//Initialize Driver and Start App
-    	ChromeOptions options = new ChromeOptions();       
-        // Add argument to disable notifications
-        options.addArguments("--disable-notifications");
-    	driver = new ChromeDriver(options);
-    	driver.get("https://login.salesforce.com/");
+//    	ChromeOptions options = new ChromeOptions();       
+//        // Add argument to disable notifications
+//        options.addArguments("--disable-notifications");
+//    	driver = new ChromeDriver(options);
+//    	driver.get("https://login.salesforce.com/");
     	driver.manage().window().maximize();
     	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     	

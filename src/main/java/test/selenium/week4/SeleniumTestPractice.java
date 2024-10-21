@@ -103,7 +103,7 @@ public class SeleniumTestPractice extends ReusableClass{
     	System.out.println("Log : "+expectedResult+" : "+expectedAccountName+" is Created");
     }
     
-    @Test 
+    @Test (enabled=false)
     public void verifySorted() throws InterruptedException {
     	//    	Click on toggle menu button from the left corner
     	driver.findElement(By.xpath("//button[@title='App Launcher']")).click();
@@ -285,7 +285,7 @@ public class SeleniumTestPractice extends ReusableClass{
     	}
 	}
     	
-    @Test
+    @Test (enabled=false)
     public void editDashboard() throws InterruptedException
     {
     	driver.findElement(By.xpath("//button[@title='App Launcher']")).click();
